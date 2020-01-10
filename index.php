@@ -1,7 +1,6 @@
 <?php
 $title = "La multiplication avec les tables";
 include "includes/header.php";
-
 ?>
 
 

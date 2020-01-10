@@ -31,31 +31,32 @@ if(isset($_GET["submit"])) {
 
     for($i = 1; $i <= 10; $i++) {
         if($id === $i) {
-            ?>
-            
-                <form class="test" action="" method="POST">
-                    <input type="number" value="<?php echo $id; ?>">
-                    <div> x </div>
-                    <input type="number" name="secondNum" value="<?php echo $rand; ?>">
-                    <div> = </div>
-                    <input type="number" name="result" placeholder="Entrer le resultat">
-                    <input type="submit" name="submitResult" value="Verifier">
-                </form>
-            
-                <?php
-                if(isset($_POST["submitResult"])) {
-                    $result_str = $_POST["result"];
-                    $result = intval($result_str);
-                    $secondNum_str = $_POST["secondNum"];
-                    $secondNum = intval($secondNum_str);
-            
-                    if($result === $i * $secondNum) {
-                        echo "Le resultat est correct!";
-                    } else {
-                        echo "Incorrect! Essayez du nouveau.";
-                    }
-                }
-                }
-    }
+?>
+    <h2>Vous avez selectionné la table du numero <?php echo $id; ?></h2>
+    <form class="test" action="" method="POST">
+        <input type="number" value="<?php echo $id; ?>">
+        <div> x </div>
+        <input type="number" name="secondNum" value="<?php echo $rand; ?>">
+        <div> = </div>
+        <input type="number" name="result" placeholder="Entrer le resultat">
+        <input type="submit" name="submitResult" value="Verifier">
+    </form>
 
+<?php
+    if(isset($_POST["submitResult"])) {
+        $result_str = $_POST["result"];
+        $result = intval($result_str);
+
+        $secondNum_str = $_POST["secondNum"];
+        $secondNum = intval($secondNum_str);
+
+        if($result === $i * $secondNum) {
+            echo "Le resultat est correct!";
+        } else {
+            echo "Incorrect! Essayez de nouveau.";
+        }
+    }
+        }
+    }
 }
+?>
