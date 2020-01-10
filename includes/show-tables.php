@@ -45,7 +45,6 @@ include "footer.php";
 if(isset($_GET["submit"])) {
     ?>
 
-    
     <h2>Vous avez selectionné les tables suivantes:</h2>
     <div class="tables">
     <?php

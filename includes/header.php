@@ -23,4 +23,5 @@
                 <li class="nav-item">
                     <a class="nav-link" href="show-tables.php">Afficher les tables de multiplications</a>
                 </li>
+        </div>
     </nav>
