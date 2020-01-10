@@ -5,7 +5,7 @@ include "footer.php";
 ?>
 
 <h1>Selectionez les tables de multiplication</h1>
-<form class="form_show" action="" method="GET">
+<form class="form-show" action="" method="GET">
     <input type="checkbox" name="1fois" value="uneFois">1
     <input type="checkbox" name="2fois" value="deuxFois">2
     <input type="checkbox" name="3fois" value="troisFois">3
