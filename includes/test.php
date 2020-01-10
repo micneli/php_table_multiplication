@@ -27,20 +27,35 @@ include "footer.php";
 if(isset($_GET["submit"])) {
     $id_str = $_GET["id"];
     $id = intval($id_str);
-    
-    if($id === 2) {
-        ?>
+    $rand = rand(1, 10);
 
-    <form class="test" action="" method="">
-        <input type="number" value="<?php echo $id; ?>">
-        <div>x</div>
-        <input type="number" value="<?php echo rand(1, 10); ?>">
-        <div>=</div>
-        <input type="number" name="number" placeholder="Entrer le resultat">
-        <input type="submit" name="result" value="Verifier">
-    </form>
-
-    <?php
-    
+    for($i = 1; $i <= 10; $i++) {
+        if($id === $i) {
+            ?>
+            
+                <form class="test" action="" method="POST">
+                    <input type="number" value="<?php echo $id; ?>">
+                    <div> x </div>
+                    <input type="number" name="secondNum" value="<?php echo $rand; ?>">
+                    <div> = </div>
+                    <input type="number" name="result" placeholder="Entrer le resultat">
+                    <input type="submit" name="submitResult" value="Verifier">
+                </form>
+            
+                <?php
+                if(isset($_POST["submitResult"])) {
+                    $result_str = $_POST["result"];
+                    $result = intval($result_str);
+                    $secondNum_str = $_POST["secondNum"];
+                    $secondNum = intval($secondNum_str);
+            
+                    if($result === $i * $secondNum) {
+                        echo "Le resultat est correct!";
+                    } else {
+                        echo "Incorrect! Essayez du nouveau.";
+                    }
+                }
+                }
     }
+
 }
