@@ -5,18 +5,40 @@ include "footer.php";
 ?>
 
 <h1>Selectionez les tables de multiplication</h1>
-<form class="form-show" action="" method="GET">
-    <input type="checkbox" name="1fois" value="uneFois">1
-    <input type="checkbox" name="2fois" value="deuxFois">2
-    <input type="checkbox" name="3fois" value="troisFois">3
-    <input type="checkbox" name="4fois" value="quattreFois">4
-    <input type="checkbox" name="5fois" value="cinqFois">5
-    <input type="checkbox" name="6fois" value="sixFois">6
-    <input type="checkbox" name="7fois" value="septFois">7
-    <input type="checkbox" name="8fois" value="huitFois">8
-    <input type="checkbox" name="9fois" value="neufFois">9
-    <input type="checkbox" name="10fois" value="dixFois">10
-    <input type="submit" name="submit">
+<form id="test-form" class="form-inline" action="" method="GET">
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="1fois" value="uneFois">1
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="2fois" value="deuxFois">2
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="3fois" value="troisFois">3
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="4fois" value="quattreFois">4
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="5fois" value="cinqFois">5
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="6fois" value="sixFois">6
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="7fois" value="septFois">7
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="8fois" value="huitFois">8
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="9fois" value="neufFois">9
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="10fois" value="dixFois">10
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="submit" name="submit">
+    </div>
 </form>
 
 <?php
