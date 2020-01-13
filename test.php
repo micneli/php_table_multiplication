@@ -19,7 +19,7 @@ include "includes/footer.php";
         } 
         ?>
     </select>
-    <input type="submit" name="submit">
+    <input type="submit" name="submit" value="Tester" class="btn btn-info">
 </form>
 
 <?php
@@ -28,9 +28,6 @@ if(isset($_GET["submit"])) {
     $id = intval($id_str);
     
     $rand = rand(1, 10);
-
-    // for($i = 1; $i <= 10; $i++) {
-    //     if($id === $i) {
 ?>
     <h2>Vous avez selectionné la table du numero <?php echo $id; ?></h2>
     <form id="test-form" class="form-inline" action="" method="POST">
@@ -40,7 +37,7 @@ if(isset($_GET["submit"])) {
         <input type="number" name="secondNum" value="<?php echo $rand; ?>">
         <div> = </div>
         <input type="number" name="result" placeholder="Entrer le resultat">
-        <input type="submit" name="submitResult" value="Verifier">
+        <input type="submit" name="submitResult" value="Verifier" class="btn btn-info">
     </form>
 
 <?php
@@ -55,13 +52,11 @@ if(isset($_GET["submit"])) {
             echo '<p class="text-center">Vous devez entrer une valeur comme le resultat!</p>';
         } else {
             if($result === $id * $secondNum) {
-                echo '<p class="text-center">Le resultat est correct!</p>';
+                echo '<p class="text-center">Le resultat est correct !</p>';
             } else {
-                echo '<p class="text-center">Incorrect! Essayez de nouveau.</p>';
+                echo '<p class="text-center">Incorrect ! Essayez de nouveau.</p>';
             }
         }
     }
-    //     }
-    // }
 }
 ?>

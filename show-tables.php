@@ -15,7 +15,7 @@ include "includes/footer.php";
     }
     ?>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="submit" name="submit" value="Afficher">
+        <input class="form-check-input btn bg-info" type="submit" name="submit" value="Afficher">
     </div>
 </form>
 
