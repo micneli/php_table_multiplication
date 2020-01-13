@@ -36,6 +36,9 @@ if(isset($_GET["submit"])) {
         echo "<h2>Vous avez selectionné les tables suivantes:</h2>";
         echo "Number of the checked boxes: " . array_sum($arr);
     }
+
+    // $json_arr = json_encode($arr);
+    // echo $json_arr;
 ?>
     
     <div class="tables">
