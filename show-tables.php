@@ -21,40 +21,38 @@ include "includes/footer.php";
 
 <?php
 if(isset($_GET["submit"])) {
-    ?>
-    <?php
-        // $arr = [
-        //     isset($_GET["1fois"]), isset($_GET["2fois"]), isset($_GET["3fois"]), isset($_GET["4fois"]), isset($_GET["5fois"]), isset($_GET["6fois"]), isset($_GET["7fois"]), isset($_GET["8fois"]), isset($_GET["9fois"]), isset($_GET["10fois"])
-        // ];
-        $arr = [];
+    // $arr = [
+    //     isset($_GET["1fois"]), isset($_GET["2fois"]), isset($_GET["3fois"]), isset($_GET["4fois"]), isset($_GET["5fois"]), isset($_GET["6fois"]), isset($_GET["7fois"]), isset($_GET["8fois"]), isset($_GET["9fois"]), isset($_GET["10fois"])
+    // ];
+    $arr = [];
 
-        for($i = 0; $i < 10; $i++) {
-            $arr[$i] = isset($_GET["'" . ($i + 1) . "fois'"]);
-            }
-
-        var_dump($arr);
-
-        if(array_sum($arr) === 0) { // boolean values are casted as 1 for true and 0 for false
-            echo "<h2>Vous devez cocher au moins une case</h2>";
-        } else {
-            echo "<h2>Vous avez selectionné les tables suivantes:</h2>";
-            echo "Number of checked boxes: " . array_sum($arr);
+    for($i = 0; $i < 10; $i++) {
+        $arr[$i] = isset($_GET . "['" . ($i + 1) . "fois]'");
         }
 
-        //     if(isset($_GET['1fois'])) {
-        //         echo (isset($_GET['1fois']));
-        //     }
+    var_dump($arr);
 
-        //$result = 0;
-        // echo isset($_GET['1fois']);
-        // for($i = 1; $i <= 10; $i++) {
-        //     echo (isset($_GET["'" . $i . "fois'"])) . "<br>";
-        //     // $result += isset($_GET['"' . $i . 'fois"']);
-        // }
-        // if($result === 0) {
-        //     echo "<h2>Vous devez cocher au moins une case</h2>";
-        // }
-    ?>
+    if(array_sum($arr) === 0) { // boolean values are casted as 1 for true and 0 for false
+        echo "<h2>Vous devez cocher au moins une case</h2>";
+    } else {
+        echo "<h2>Vous avez selectionné les tables suivantes:</h2>";
+        echo "Number of checked boxes: " . array_sum($arr);
+    }
+
+    //     if(isset($_GET['1fois'])) {
+    //         echo (isset($_GET['1fois']));
+    //     }
+
+    //$result = 0;
+    // echo isset($_GET['1fois']);
+    // for($i = 1; $i <= 10; $i++) {
+    //     echo (isset($_GET["'" . $i . "fois'"])) . "<br>";
+    //     // $result += isset($_GET['"' . $i . 'fois"']);
+    // }
+    // if($result === 0) {
+    //     echo "<h2>Vous devez cocher au moins une case</h2>";
+    // }
+?>
     
     <div class="tables">
     <?php
