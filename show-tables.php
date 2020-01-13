@@ -1,9 +1,10 @@
 <?php
-$title = "Choisissez les table de multiplication";
-include "header.php";
-include "footer.php";
+$title = "Choisir les table de multiplication";
+include "includes/header.php";
+include "includes/footer.php";
 ?>
 
+<div class="container">
 <h1>Selectionez les tables de multiplication</h1>
 <form id="test-form" class="form-inline" action="" method="GET">
     <?php
@@ -14,19 +15,23 @@ include "footer.php";
     }
     ?>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="submit" name="submit">
+        <input class="form-check-input" type="submit" name="submit" value="Afficher">
     </div>
 </form>
 
 <?php
 if(isset($_GET["submit"])) {
     ?>
-
-    <h2>Vous avez selectionné les tables suivantes:</h2>
+    <?php 
+        if(isset($_GET["1fois"]) == "" || isset($_GET["2fois"]) == "" || isset($_GET["3fois"]) == "" || isset($_GET["4fois"]) == "" || isset($_GET["5fois"]) == "" || isset($_GET["6fois"]) == "" || isset($_GET["7fois"]) == "" || isset($_GET["8fois"]) == "" || isset($_GET["9fois"]) == "" || isset($_GET["10fois"]) == "") {
+            echo "<h2>Vous devez cocher au moins une case</h2>";
+        }
+    ?>
     <div class="tables">
     <?php
         if(isset($_GET["1fois"])) {
             ?>
+            <h2>Vous avez selectionné les tables suivantes:</h2>
             <div class="table">
                 <p>1 x 1 = 1</p>
                 <p>1 x 2 = 2</p>
@@ -199,3 +204,4 @@ if(isset($_GET["submit"])) {
 <?php   
 }
 ?>
+</div>

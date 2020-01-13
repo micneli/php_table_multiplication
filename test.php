@@ -1,7 +1,7 @@
 <?php
-$title = "Tester la multiplication";
-include "header.php";
-include "footer.php";
+$title = "Tester les multiplications";
+include "includes/header.php";
+include "includes/footer.php";
 ?>
 
 <h1>Selectionez la table de multiplication</h1>
