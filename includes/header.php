@@ -13,9 +13,9 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">Multiplication<a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
+    <nav class="navbar navbar-extend-lg navbar-light bg-light">
+        <a class="navbar-brand">Multiplication</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
         </button>
 
@@ -27,5 +27,6 @@ session_start();
                 <li class="nav-item">
                     <a class="nav-link" href="show-tables.php">Afficher les tables de multiplications</a>
                 </li>
+            </ul>
         </div>
     </nav>
