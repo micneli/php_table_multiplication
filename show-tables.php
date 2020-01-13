@@ -1,5 +1,5 @@
 <?php
-$title = "Choisir les table de multiplication";
+$title = "Choisir les tables de multiplications";
 include "includes/header.php";
 include "includes/footer.php";
 ?>
