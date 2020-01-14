@@ -1,11 +1,11 @@
-/* .tables {
+.tables {
    display: flex;
    justify-content: start;
 }
 
 .table {
     margin-right: 1em;
-} */
+}
 
 #test-form, .form-fields {
     display: flex;

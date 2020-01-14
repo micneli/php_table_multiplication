@@ -27,7 +27,7 @@ if(isset($_GET["submit"])) {
     $arr = [];
 
     for($i = 0; $i < 10; $i++) {
-        $arr[$i] = isset($_GET[($i+1).'fois']);
+        $arr[$i] = (isset($_GET[($i+1).'fois']));
         }
 
     if(array_sum($arr) === 0) { // boolean values are casted as 1 for true and 0 for false
