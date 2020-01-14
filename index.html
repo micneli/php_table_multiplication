@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON Data Display</title>
+</head>
+<body>
+    <p id="serverResponse"></p>
+    <div id="tables">
+        <div id="table">
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const request = new XMLHttpRequest();
+
+        request.onreadystatechange = function() {
+            console.log("test");
+            if(this.status === 200) {
+                const serverResponse = document.getElementById("serverResponse");
+                const table = document.getElementById("table");
+                let data = JSON.parse(this.responseText);
+                // data.forEach(function(item, i) {
+                //     console.log(item);
+                //     serverResponse.innerHTML = item;
+                // });
+                console.log("Ok");
+            } else {
+                console.log("Error");
+            }            
+        }
+
+        request.open("GET", "show-tables.php", true);
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.send();
+    </script>
+</body>
+</html>
