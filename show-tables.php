@@ -26,6 +26,7 @@ include "includes/footer.php";
         let results = document.getElementById("tables");
         let form = document.querySelector('form');
         let data = new FormData(form);
+        console.log(data);
         // Create our XMLHttmRequest object
         const hr = new XMLHttpRequest();
         // Create variables we need to send to our PHP file
@@ -36,18 +37,18 @@ include "includes/footer.php";
         hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         // Access the onreadystatechange event for the XMLHttpRequest object
         hr.onreadystatechange = function() {
-            console.log(data);
-            // if(hr.readyState === 4 && hr.status === 200) { // hr === this
-            //     let return_data = JSON.parse(hr.responseText);
-            //     results.innerHTML = "";
-            //     for(let obj in return_data) {
-            //         console.log(data);
-            //         // results.innerHTML += data[obj];
-            //     });
-            //     // console.log("Ok");
-            // } else {
-            //     console.log("Error");
-            // }            
+            
+            if(hr.readyState === 4 && hr.status === 200) { // hr === this
+                let return_data = JSON.parse(hr.responseText);
+                results.innerHTML = "";
+                for(let obj in return_data) {
+                    console.log(data);
+                    // results.innerHTML += data[obj];
+                }
+                // console.log("Ok");
+            } else {
+                console.log("Error");
+            }            
         }
         // Send the data to PHP now... and wait for response to update the status div
         hr.send(data);
