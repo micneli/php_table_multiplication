@@ -38,7 +38,7 @@ if(isset($_GET["submit"])) {
     }
 
 
-    echo"<div id=\"container-tables\"></div>";
+    // echo"<div id=\"container-tables\"></div>"; jquery
 
 
 
@@ -228,7 +228,7 @@ if(isset($_GET["submit"])) {
 
 
 
-<script src="jquery.js"></script>
+<!-- <script src="jquery.js"></script>
 <script>
 
 
@@ -258,7 +258,7 @@ $('.form-check-input').on('click', function()
 			$( "#table-de-"+table ).remove();
 		}
 
-	}); 
+	});  -->
 
 
 
