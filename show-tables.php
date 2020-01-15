@@ -36,7 +36,7 @@ if(isset($_GET["submit"])) {
         echo "<h2>Vous avez selectionné les tables suivantes:</h2>";
         echo "Number of the checked boxes: " . array_sum($arr);
     }
-
+    var_dump($arr);
 
     // echo"<div id=\"container-tables\"></div>"; jquery
 
@@ -46,8 +46,24 @@ if(isset($_GET["submit"])) {
     // echo $json_arr;
 ?>
     
-    <div class="tables">
+    <!-- <div class="tables">
     <?php
+        foreach($arr as $key => $value) {
+            if($value) {
+                $key = intval($key);
+                for($i = 1; $i <=10; $i++) {
+                    $result = 0;
+                    ?>
+                    <div class="table">
+                    <p><?php $i * $key = $result ?></p>
+                    </div>
+                <?php
+                }
+            }
+        }
+    ?>
+
+        <?php
         if(isset($_GET["1fois"])) {
             ?>
         
@@ -223,7 +239,7 @@ if(isset($_GET["submit"])) {
 <?php   
 }
 ?>
-</div>
+</div> -->
 
 
 
@@ -258,8 +274,8 @@ $('.form-check-input').on('click', function()
 			$( "#table-de-"+table ).remove();
 		}
 
-	});  -->
+	});  
 
 
 
-</script>
+</script> -->
