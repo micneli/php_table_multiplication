@@ -1,0 +1,33 @@
+<!-- <script src="jquery.js"></script>
+<script>
+
+
+$('.form-check-input').on('click', function() 
+	{ 
+        table = $( this ).val();
+        
+
+
+		is_check = $( this ).prop( "checked" );
+
+		if(is_check)
+		{
+			$.ajax(
+			{
+				url: 'table.php?table='+table,
+				ifModified:true,
+				success: function(content)
+				{
+					$( "#container-tables" ).prepend( content );
+
+				}
+			});
+		}
+		else
+		{
+			$( "#table-de-"+table ).remove();
+		}
+
+	});  
+
+</script> -->
