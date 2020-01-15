@@ -1,4 +1,6 @@
 <?php
+header("Content-Type: application/json");
+
 if(isset($_GET["submit"])) {
     // $arr = [
     //     isset($_GET["1fois"]), isset($_GET["2fois"]), isset($_GET["3fois"]), isset($_GET["4fois"]), isset($_GET["5fois"]), isset($_GET["6fois"]), isset($_GET["7fois"]), isset($_GET["8fois"]), isset($_GET["9fois"]), isset($_GET["10fois"])
@@ -10,6 +12,7 @@ if(isset($_GET["submit"])) {
 
     $arr_json = json_encode($arr);
     echo($arr_json);
+}
 
     // if(array_sum($arr) === 0) { // boolean values are casted as 1 for true and 0 for false
     //     echo "<h2>Vous devez cocher au moins une case</h2>";
@@ -17,11 +20,11 @@ if(isset($_GET["submit"])) {
     //     echo "<h2>Vous avez selectionné les tables suivantes:</h2>";
     //     echo "Number of the checked boxes: " . array_sum($arr);
     // }
-    
+     
 ?>
-    
-    <!-- <div class="tables">
-    <?php
+
+<!-- <div class="tables">
+<?php
         if(isset($_GET["1fois"])) {
             ?>
         
@@ -190,6 +193,7 @@ if(isset($_GET["submit"])) {
                 <p>10 x 9 = 90</p>
                 <p>10 x 10 = 100</p>
             </div>
-        <?php
+            <?php
         }
-    ?>
+        ?>
+</div> -->
