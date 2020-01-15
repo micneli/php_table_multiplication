@@ -10,7 +10,7 @@ include "includes/footer.php";
     <?php
     for($i = 1; $i <= 10; $i++) {
         echo '<div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" name="' . $i . 'fois" value="">' . $i . 
+                <input class="form-check-input" type="checkbox" name="' . $i . 'fois" value="' . $i . '">' . $i . 
               '</div>';
     }
     ?>
@@ -36,6 +36,11 @@ if(isset($_GET["submit"])) {
         echo "<h2>Vous avez selectionné les tables suivantes:</h2>";
         echo "Number of the checked boxes: " . array_sum($arr);
     }
+
+
+    echo"<div id=\"container-tables\"></div>";
+
+
 
     // $json_arr = json_encode($arr);
     // echo $json_arr;
@@ -219,3 +224,42 @@ if(isset($_GET["submit"])) {
 }
 ?>
 </div>
+
+
+
+
+<script src="jquery.js"></script>
+<script>
+
+
+$('.form-check-input').on('click', function() 
+	{ 
+        table = $( this ).val();
+        
+
+
+		is_check = $( this ).prop( "checked" );
+
+		if(is_check)
+		{
+			$.ajax(
+			{
+				url: 'table.php?table='+table,
+				ifModified:true,
+				success: function(content)
+				{
+					$( "#container-tables" ).prepend( content );
+
+				}
+			});
+		}
+		else
+		{
+			$( "#table-de-"+table ).remove();
+		}
+
+	}); 
+
+
+
+</script>
