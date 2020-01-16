@@ -11,7 +11,7 @@ include "includes/footer.php";
         <?php
         for($i = 1; $i <= 10; $i++) {
             echo '<div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="' . $i . 'fois" value="' . $i . '">' . $i . 
+                    <input class="form-check-input" type="checkbox" name="num[]" value="' . $i . '">' . $i . 
                 '</div>';
         }
         ?>
@@ -22,49 +22,30 @@ include "includes/footer.php";
 
 <?php
 if(isset($_GET["submit"])) {
-    $arr = [];
-
-    for($i = 0; $i < 10; $i++) {
-        $arr[$i] = (isset($_GET[($i+1).'fois']));
-        }
-
-    if(array_sum($arr) === 0) { // boolean values are casted as 1 for true and 0 for false
-        echo "<h2>Vous devez cocher au moins une case</h2>";
+    if(!isset($_GET['num'])) { // if none of the checkboxes has been checked
+        echo "<h2>Vous devez cocher au moin une case!</h2>";        
     } else {
-        echo "<h2>Vous avez selectionné les tables suivantes:</h2>";
-        echo "Number of the checked boxes: " . array_sum($arr).'<br>';
-    }
-
-    // foreach($arr as $key => $value) {
-    //     var_dump($key);
-    //     echo $key . " => " . $value . '<br>';
-    // }
-
-    // echo"<div id=\"container-tables\"></div>"; jquery
-
-    // $json_arr = json_encode($arr);
-    // echo $json_arr;
-?>
-    
-<div class="tables">
-    <?php
-        foreach($arr as $key => $value) {
-            if($value) {
+        $arr = $_GET['num']; // array with the values coming from the checkboxes BEING CHECKED
     ?>
-                <div class="table">
+    <div class="tables">
+        <?php
+        foreach ($arr as $value) {
+        ?>
+            <div class="table">
+                <?php
+                    for($i = 1; $i <= 10; $i++) {
+                        echo $value . ' * ' . $i . ' = ' . ($value)*$i . '<br>';
+                ?>
                     <?php
-                    for($k = 1; $k <= 10; $k++) {
-                        echo $key+1 . ' * ' . $k . ' = ' . ($key+1)*$k . '<br>';
-                    }
+                    } 
                     ?>
-                </div>
-            <?php
-            }
+            </div>
+        <?php
         }
-            ?>
-</div> 
-
-<?php   
+        ?>
+    </div>
+<?php 
+}  
 }
 ?>
 </div>
