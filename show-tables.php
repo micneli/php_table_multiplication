@@ -11,8 +11,7 @@ include "includes/footer.php";
         <?php
         for($i = 1; $i <= 10; $i++) {
             echo '<div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="num[]" value="' . $i . '">' . $i . 
-                '</div>';
+                    <input class="form-check-input" type="checkbox" name="num[]" value="' . $i . '">' . $i . '</div>';
         }
         ?>
         <div class="form-check form-check-inline">
@@ -20,33 +19,22 @@ include "includes/footer.php";
         </div>
     </form>
 
-<?php
-if(isset($_GET["submit"])) {
-    if(!isset($_GET['num'])) { // if none of the checkboxes has been checked
-        echo "<h2>Vous devez cocher au moin une case!</h2>";        
-    } else {
-        $arr = $_GET['num']; // array with the values coming from the checkboxes BEING CHECKED
-    ?>
-    <div class="tables">
-        <?php
-        foreach ($arr as $value) {
-        ?>
-            <div class="table">
-                <?php
-                    for($i = 1; $i <= 10; $i++) {
-                        echo $value . ' * ' . $i . ' = ' . ($value)*$i . '<br>';
-                ?>
-                    <?php
-                    } 
-                    ?>
-            </div>
-        <?php
-        }
-        ?>
-    </div>
-<?php 
-}  
-}
-?>
+<div id="serverResponse"></div>
+
+<script type="text/javascript">
+    let formElement = document.querySelector("form");
+    const hr = new XMLHttpRequest();
+
+    hr.onload = function() {
+        const serverResponse = document.getElementById("serverResponse");
+        serverResponse.innerHTML = hr.responseText;
+    };
+
+    hr.open("GET", "submitForm.php");
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    hr.send(new FormData(formElement));
+</script>
+
 </div>
 
